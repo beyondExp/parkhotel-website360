@@ -48,6 +48,54 @@
 					onready:function(krpano_interface){ krpano = krpano_interface; } 
 				  });
 	</script>
+
+	<button class="chat-button" onclick="toggleChat()"><img style="width: 1rem;" src="https://beyond-bot.ai/cdn/shop/files/B-Bot-Logo_2.svg?v=1704915963&amp;width=70"></button>
+	<iframe id="chat-iframe" src="https://b-bot-demo-travel.netlify.app/"></iframe>
+	<style>
+		.chat-button {
+			position: fixed;
+			top: 50%;
+			right: 0;
+			padding: 7px 10px;
+			background-color: #000;
+			color: white;
+			border: none;
+			border-top-left-radius: 5rem;
+			border-bottom-left-radius: 5rem;
+			cursor: pointer;
+			font-size: 16px;
+			z-index: 1000;
+			height: 9.5rem;
+		}
+		/* Iframe chat window styling */
+		#chat-iframe {
+			display: none; /* Hidden by default */
+			position: fixed;
+			bottom: 15px;
+			right: 20px;
+			width: 300px;
+			height: 600px;
+			border: 0;
+			border-radius: 1rem;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+			z-index: 999;
+			background: #ffffff;
+		}
+		.position-absolute{
+			position: absolute;
+		}
+
+	</style>
+	<script>
+		function toggleChat() {
+			const chatIframe = document.getElementById('chat-iframe');
+			if (chatIframe.style.display === 'none' || chatIframe.style.display === '') {
+				chatIframe.style.display = 'block';
+			} else {
+				chatIframe.style.display = 'none';
+			}
+		}
+	</script>
 </div>
 
 </body>
